@@ -1,0 +1,40 @@
+{
+  "intents": [
+  {
+    "tag": "greetings",
+    "patterns": ["hello", "hey", "hi", "good day", "greetings", "what's up", "how is it going"],
+    "responses": ["Hello!", "Hey", "What can I do for you?"]
+  },
+    {
+    "tag": "gpa",
+    "patterns": ["what is my gpa", "my gpa", "gpa", "calculate gpa"],
+    "responses": ["GPA"]
+  },
+  {
+    "tag": "course_enrollment",
+    "patterns": ["How can I enroll in a course?", "Course enrollment process", "Can you help me with course enrollment?"],
+    "responses": ["Sure! To enroll in a course, you can visit the 'Courses' section of our platform and browse the available courses. Once you find a course of interest, click on it to view more details. You should see an 'Enroll' button that you can click to enroll in the course."]
+  },
+  {
+    "tag": "course_completion",
+    "patterns": ["How do I mark a course as completed?", "Course completion process", "What happens when I complete a course?"],
+    "responses": ["When you complete a course, you can usually find an option to mark it as completed within the course itself. Look for a 'Complete' or 'Finish' button or a similar option. By marking a course as completed, your progress will be tracked, and you may receive a certificate or recognition for your accomplishment, depending on the course."]
+  },
+  {
+    "tag": "password_reset",
+    "patterns": ["I forgot my password. How can I reset it?", "Password reset process", "Help me with resetting my password."],
+    "responses": ["No problem! To reset your password, go to the login page and look for a 'Forgot password?' link. Click on it, and you'll be prompted to enter your email address associated with your account. Follow the instructions sent to your email to reset your password."]
+  },
+  {
+    "tag": "assignments",
+    "patterns": ["How can I submit assignments?", "Assignment submission process", "Can you guide me on submitting assignments?"],
+    "responses": ["Certainly! To submit an assignment, go to the 'Assignments' section of your course. You'll usually find instructions on how to submit within the assignment details. It could be uploading a file, entering text directly, or following specific guidelines. Make sure to submit your assignment before the deadline to avoid late penalties."]
+  },
+  {
+    "tag": "grades",
+    "patterns": ["Where can I check my grades?", "How to view my grades", "Grading information"],
+    "responses": ["To check your grades, navigate to the 'Grades' or 'Progress' section of your course. You should be able to see a breakdown of your grades for different assignments, quizzes, or exams. If you have any specific concerns or questions regarding your grades, feel free to reach out to your instructor or course administrator."]
+  }
+]
+
+}
