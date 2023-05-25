@@ -6,19 +6,34 @@
     "responses": ["Hello!", "Hey", "What can I do for you?"]
   },
     {
+  "tag": "personal",
+  "patterns": ["how are you?", "how are you doing?", "how's it going?", "how are things?"],
+  "responses": ["I'm an AI, so I don't have feelings, but I'm here to assist you!", "I'm doing well, thank you. How can I help you today?", "As an AI, I don't experience emotions, but I'm ready to assist you with any questions."]
+  },
+    {
+  "tag": "name",
+  "patterns": ["What's your name?", "May I know your name?", "Could you tell me your name?"],
+  "responses": ["I'm an AI assistant, but you can call me Flexi!", "I'm here to assist you, but I don't have a personal name. You can simply refer to me as Flexi.", "I don't possess a personal name as I am an AI, but you can address me as Flexi."]
+},
+    {
     "tag": "gpa",
     "patterns": ["what is my gpa", "my gpa", "gpa", "calculate gpa"],
     "responses": ["GPA"]
   },
+    {
+  "tag": "courses",
+  "patterns": ["What courses am I enrolled in?", "Which courses did I sign up for?", "Can you list my enrolled courses?", "Tell me about the courses I'm taking.", "My courses"],
+  "responses": ["Courses"]
+},
+   {
+"tag": "tasks_deadlines",
+"patterns": ["What are my tasks and deadlines?","What are my assignments and deadlines?", "Can you show me my task list?", "Can you show me my assignment list?", "Tell me about my upcoming tasks.","Tell me about my upcoming assignments.", "What tasks do I have?", "What are the deadlines for my tasks?"],
+"responses": ["Tasks and deadlines"]
+},
   {
     "tag": "course_enrollment",
     "patterns": ["How can I enroll in a course?", "Course enrollment process", "Can you help me with course enrollment?"],
-    "responses": ["Sure! To enroll in a course, you can visit the 'Courses' section of our platform and browse the available courses. Once you find a course of interest, click on it to view more details. You should see an 'Enroll' button that you can click to enroll in the course."]
-  },
-  {
-    "tag": "course_completion",
-    "patterns": ["How do I mark a course as completed?", "Course completion process", "What happens when I complete a course?"],
-    "responses": ["When you complete a course, you can usually find an option to mark it as completed within the course itself. Look for a 'Complete' or 'Finish' button or a similar option. By marking a course as completed, your progress will be tracked, and you may receive a certificate or recognition for your accomplishment, depending on the course."]
+    "responses": ["Sure! To enroll in a course, you can vist esoft website ( https://esoft.lk/ ) to view all the courses and contact +94 117 572 572 to get more details."]
   },
   {
     "tag": "password_reset",
@@ -28,13 +43,23 @@
   {
     "tag": "assignments",
     "patterns": ["How can I submit assignments?", "Assignment submission process", "Can you guide me on submitting assignments?"],
-    "responses": ["Certainly! To submit an assignment, go to the 'Assignments' section of your course. You'll usually find instructions on how to submit within the assignment details. It could be uploading a file, entering text directly, or following specific guidelines. Make sure to submit your assignment before the deadline to avoid late penalties."]
+    "responses": ["Certainly! To submit an assignment, go to the 'To Do' section from the side menu. You will find all the pending assignments. You can click on any assignment to view the assignment details. Submitting the assignment could be uploading a file, entering text directly, or following specific guidelines. Make sure to submit your assignment before the deadline to avoid late penalties."]
   },
   {
     "tag": "grades",
     "patterns": ["Where can I check my grades?", "How to view my grades", "Grading information"],
-    "responses": ["To check your grades, navigate to the 'Grades' or 'Progress' section of your course. You should be able to see a breakdown of your grades for different assignments, quizzes, or exams. If you have any specific concerns or questions regarding your grades, feel free to reach out to your instructor or course administrator."]
+    "responses": ["To check your grades, navigate to the 'Dashboard'. You should be able to see a breakdown of your grades for different assignments, quizzes, or exams. If you have any specific concerns or questions regarding your grades, feel free to reach out to your instructor or course administrator."]
+  },
+    {
+    "tag": "faculties",
+    "patterns": ["faculties", "list of faculties", "faculty list", "faculty", "departments"],
+    "responses": ["Here is the list of faculties|School of Computing|School of Business and Law|School of Engineering|School Of Tourism & Hospitality|School Of Languages|School Of Life Sciences|School Of Fashion and Design"]
+  },
+    {
+    "tag": "it_courses",
+    "patterns": ["IT courses", "list of IT courses", "what are the IT degrees I can follow", "courses in IT department"],
+    "responses": ["Here is the list of IT courses|BIT|BCS|BTEC in Networking|BTEC in Computing & Systems Development"]
   }
-]
+  ]
 
 }

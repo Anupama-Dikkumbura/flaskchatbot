@@ -88,7 +88,30 @@ body{
 
 .chat .chat-history {
     padding: 20px;
-    border-bottom: 2px solid #fff
+    border-bottom: 2px solid #fff;
+    max-height:550px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    @media only screen and (max-height: 900px) {
+        max-height:500px;
+
+      }
+      @media only screen and (max-height: 790px) {
+        max-height:350px;
+
+      }
+
+      @media only screen and (max-height: 600px) {
+        max-height:300px;
+
+      }
+
+      
+      @media only screen and (max-height: 507px) {
+        max-height:250px;
+
+      }
+      
 }
 
 .chat .chat-history ul {
@@ -97,6 +120,7 @@ body{
 
 .chat .chat-history ul li {
     list-style: none;
+    text-decoration: none;
     margin-bottom: 30px
 }
 

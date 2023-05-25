@@ -1,159 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"
+        integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Esoft Virtual Assistant</title>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="row clearfix">
-        <div class="col-lg-12">
-            <div class="card chat-app">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card chat-app">
 
-                <div class="chat">
-                    <div class="chat-header clearfix">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
-                                </a>
-                                <div class="chat-about">
-                                    <h6 class="m-b-0">Bank Virtual Assistant</h6>
-                                    <small>Live</small>
+                    <div class="chat">
+                        <div class="chat-header clearfix">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
+                                    </a>
+                                    <div class="chat-about">
+                                        <h6 class="m-b-0">Flexi - Esoft Virtual Assistant</h6>
+                                        <small>Live</small>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 hidden-sm text-right">
+                                <div class="col-lg-6 hidden-sm text-right">
 
-                                <a href="javascript:void(0);" class="btn btn-outline-warning"><i class="fa fa-question"></i></a>
+                                    <a href="javascript:void(0);" class="btn btn-outline-warning"><i
+                                            class="fa fa-question"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="chat-history">
-                        <ul id="chatarea" class="m-b-0">
-                            <li class="clearfix">
-                                <div class="message-data text-right">
-                                    <span class="message-data-time">10:10 AM, Today</span>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                        <div id="chatarea" class="chat-history">
+                            <ul class="m-b-0" id="message-list">
+
+                            </ul>
+                        </div>
+                        <div class="chat-message clearfix">
+                            <div class="input-group mb-0">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-microphone"></i></span>
                                 </div>
-                                <div class="message other-message float-right"> Hi Aiden, how are you? How is the project coming along? </div>
-                            </li>
-                            <li class="clearfix">
-                                <div class="message-data">
-                                    <span class="message-data-time">10:12 AM, Today</span>
-                                </div>
-                                <div class="message my-message">Are we meeting today?</div>
-                            </li>
-                            <li class="clearfix">
-                                <div class="message-data">
-                                    <span class="message-data-time">10:15 AM, Today</span>
-                                </div>
-                                <div class="message my-message">Project has been already finished and I have results to show you.</div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="chat-message clearfix">
-                        <div class="input-group mb-0">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fa fa-microphone"></i></span>
+                                <input id="voice-display" class="form-control" contenteditable="true"></input>
+                                <button id="sendBtn" class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-send"></i></span>
+                                </button>
                             </div>
-                            <input id="voice-display" class="form-control" contenteditable="true"/>
-                            <button id="sendBtn" class="input-group-append">
-                                <span class="input-group-text"><i class="fa fa-send"></i></span>
-                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="listingModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-text">
+                        <h2 class="modal-title">Listing</h2>
+                        <div class="modal-description" id="talkText">Talk in English</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="userId">User ID</label>
+                            <input type="text" class="form-control" id="userId" placeholder="Enter user ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter password">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="sendBtn2">Send</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="listingModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-overlay"></div>
-                  <div class="modal-text">
-                      <h2 class="modal-title">Listing</h2>
-                      <div class="modal-description" id="talkText">Talk in English</div>
-                  </div>
-              </div>
-          </div>
-      </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script>
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<script>
-    const voiceDisplay = document.getElementById("voice-display");
-    const talkText = document.getElementById("talkText");
+        function scrollToBottom() {
+            const chatarea = document.getElementById('chatarea');
+            chatarea.scrollTop = chatarea.scrollHeight;
+        }
 
 
-    // Create a new SpeechRecognition object
-    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        $('#chatarea').append(`<li class="clearfix" style="list-style:none">
+                                <div class="message-data">
+                                    <img src="esoft.png" alt="avatar">
+                                    <span class="message-data-time">${getCurrentTime()}</span>
+                                </div>
+                                <div class="message my-message">Hi I'm Flexi, Esoft's AI Assistant. How can I Help You?</div>
+                            </li>`);
+        const voiceDisplay = document.getElementById("voice-display");
+        const talkText = document.getElementById("talkText");
 
-    // Set recognition options
-    recognition.lang = "en";
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 1;
+        document.addEventListener('DOMContentLoaded', () => {
+            const messageList = document.getElementById('message-list');
+            scrollToBottom();
 
-    // Handle the speech recognition result event
-    recognition.onresult = function(event) {
-        const result = event.results[0][0].transcript;
-        voiceDisplay.innerText = result;
-        talkText.innerText=result;
-       setTimeout(
-            $('#listingModel').modal('hide')
-        , 5000);
-
-    }
-
-    // Start voice recognition when the microphone button is clicked
-    document.querySelector(".fa-microphone").addEventListener("click", function() {
-        talkText.innerText=result= 'Talk in English';
-        voiceDisplay.innerText ='';
-        $('#listingModel').modal('show');
-        recognition.start();
-    });
-
-    //Socket IO
-    $(document).ready(function(){
-        var socket = io.connect("http://localhost:5000");
-        socket.on('connect', function(){
-            socket.send("User connected!");
+            function scrollToBottom() {
+                window.scrollTo(0, 500);
+            }
         });
 
-        socket.on('message', function(data){
+        // Create a new SpeechRecognition object
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
 
-            $('#chatarea').append(`<li class="clearfix">
+        // Set recognition options
+        recognition.lang = "en";
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        // Handle the speech recognition result event
+        recognition.onresult = function (event) {
+            const result = event.results[0][0].transcript;
+            $("#voice-display").val(result);
+            talkText.innerText = result;
+            setTimeout(
+                $('#listingModel').modal('hide')
+                , 5000);
+
+        }
+
+        // Start voice recognition when the microphone button is clicked
+        document.querySelector(".fa-microphone").addEventListener("click", function () {
+            talkText.innerText = result = 'Talk in English';
+            voiceDisplay.innerText = '';
+            $('#listingModel').modal('show');
+            recognition.start();
+        });
+
+        //Socket IO
+        $(document).ready(function () {
+            var socket = io.connect("http://localhost:5000");
+            socket.on('connect', function () {
+                socket.send("User connected!");
+            });
+
+            // Chatbot message
+            socket.on('message', function (data) {
+                //User login
+                if (data === "You have to login first") {
+                    $('#loginModal').modal('show');
+                }
+
+                // showing a list
+                if (data.includes("|")) {
+                    let result = data.replace(/\|/g, "<br/>");
+                    $('#chatarea').append(`<li class="clearfix" style="list-style:none">
+                                    <div class="message-data">
+                                        <img src="esoft.png" alt="avatar">
+                                        <span class="message-data-time">${getCurrentTime()}</span>
+                                    </div>
+                                    <div class="message my-message">${result}</div>
+                                </li>`);
+                    scrollToBottom();
+                } else {
+                    $('#chatarea').append(`<li class="clearfix" style="list-style:none">
                                 <div class="message-data">
-                                    <span class="message-data-time">10:15 AM, Today</span>
+                                    <img src="esoft.png" alt="avatar">
+                                    <span class="message-data-time">${getCurrentTime()}</span>
                                 </div>
                                 <div class="message my-message">${data}</div>
                             </li>`);
-        });
+                    scrollToBottom();
+                }
 
-        $('#sendBtn').on('click', function(){
-            var message = $('#voice-display').val();
-            socket.send($('#voice-display').val());
-            $('#chatarea').append(`<li class="clearfix">
+            });
+
+            // User sending message
+            $('#sendBtn').on('click', function () {
+                var message = $('#voice-display').val();
+                socket.send($('#voice-display').val().toLowerCase());
+
+                $('#chatarea').append(`<li class="clearfix" style="list-style:none">
                                 <div class="message-data text-right">
-                                    <span class="message-data-time">10:10 AM, Today</span>
+                                    <span class="message-data-time">${getCurrentTime()}</span>
                                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
                                 </div>
                                 <div class="message other-message float-right">${message}</div>
                             </li>`);
+                $('#voice-display').val('');
+                scrollToBottom()
+            });
+
+            // Event listener for the send button
+            $('#sendBtn2').on('click', function () {
+                // Get the user ID and password values
+                var userId = $('#userId').val();
+                var password = $('#password').val();
+
+                var loginData = { userId, password }
+
+                socket.send(loginData);
+
+                // Display the values in the console
+                console.log('User ID:', userId);
+                console.log('Password:', password);
+
+                // Clear the input fields
+                $('#userId').val('');
+                $('#password').val('');
+
+                // Close the login modal
+                $('#loginModal').modal('hide');
+            });
         });
-    });
-</script>
+
+
+        // Get current time function
+        function getCurrentTime() {
+            const date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            const ampm = hours >= 12 ? "PM" : "AM";
+            hours = hours % 12 || 12;
+            minutes = minutes < 10 ? `0${minutes}` : minutes;
+            return `${hours}:${minutes} ${ampm}`;
+        }
+
+    </script>
 </body>
+
 </html>

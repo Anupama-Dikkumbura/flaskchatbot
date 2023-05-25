@@ -1,6 +1,3 @@
-from flask import Flask, render_template
-from flask_socketio import SocketIO, send
-
 import random
 import json
 import pickle
@@ -39,14 +36,18 @@ def bag_of_words(sentence):
 def predict_class(sentence):
     bow = bag_of_words(sentence)
     res = model.predict(np.array([bow]))[0]
-    ERROR_THRESHOLD = 0.5
-    results = [[i,r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+    ERROR_THRESHOLD = 0.97
+    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+
+    if len(results) == 0:
+        return_list2 = [{'intent': 'notfound', 'probability': '0'}]
+        print(return_list2)
+        return return_list2
 
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []
     for r in results:
         return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
-
     return return_list
 
 
