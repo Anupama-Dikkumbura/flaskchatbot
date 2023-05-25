@@ -33,7 +33,7 @@
                                         <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar">
                                     </a>
                                     <div class="chat-about">
-                                        <h6 class="m-b-0">Flexi - Esoft Virtual Assistant</h6>
+                                        <h6 class="m-b-0">Felix - Esoft Virtual Assistant</h6>
                                         <small>Live</small>
                                     </div>
                                 </div>
@@ -123,23 +123,11 @@
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
         crossorigin="anonymous"></script>
     <script>
-
+        // Auto Scrolling chat interface to bottom
         function scrollToBottom() {
             const chatarea = document.getElementById('chatarea');
             chatarea.scrollTop = chatarea.scrollHeight;
         }
-
-
-        $('#chatarea').append(`<li class="clearfix" style="list-style:none">
-                                <div class="message-data">
-                                    <img src="esoft.png" alt="avatar">
-                                    <span class="message-data-time">${getCurrentTime()}</span>
-                                </div>
-                                <div class="message my-message">Hi I'm Flexi, Esoft's AI Assistant. How can I Help You?</div>
-                            </li>`);
-        const voiceDisplay = document.getElementById("voice-display");
-        const talkText = document.getElementById("talkText");
-
         document.addEventListener('DOMContentLoaded', () => {
             const messageList = document.getElementById('message-list');
             scrollToBottom();
@@ -148,6 +136,19 @@
                 window.scrollTo(0, 500);
             }
         });
+
+        // Welcome Message
+        $('#chatarea').append(`<li class="clearfix" style="list-style:none">
+                                <div class="message-data">
+                                    <img src="esoft.png" alt="avatar">
+                                    <span class="message-data-time">${getCurrentTime()}</span>
+                                </div>
+                                <div class="message my-message">Hi I'm Flexi, Esoft's AI Assistant. How can I Help You?</div>
+                            </li>`);
+
+        // Voice Typing
+        const voiceDisplay = document.getElementById("voice-display");
+        const talkText = document.getElementById("talkText");
 
         // Create a new SpeechRecognition object
         const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
@@ -190,7 +191,7 @@
                     $('#loginModal').modal('show');
                 }
 
-                // showing a list
+                // showing a chat bot messages
                 if (data.includes("|")) {
                     let result = data.replace(/\|/g, "<br/>");
                     $('#chatarea').append(`<li class="clearfix" style="list-style:none">

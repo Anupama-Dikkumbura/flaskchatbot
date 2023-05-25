@@ -137,7 +137,6 @@ def handle_message(message):
     global recent_tag
 
     if message != "User connected!":
-
         if not isinstance(message, str):
             login(message)
         elif message == "Logout" or message == "logout":
@@ -171,6 +170,7 @@ def handle_message(message):
                      message +
                      "' If you have a specific question or if there's something specific you'd "
                      "like to discuss, please let me know, and I'll be glad to assist you.", broadcast=True)
+
             else:
                 res = get_response(ints, intents)
                 send(res, broadcast=True)

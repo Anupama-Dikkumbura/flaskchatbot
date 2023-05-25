@@ -6,6 +6,11 @@
     "responses": ["Hello!", "Hey", "What can I do for you?"]
   },
     {
+    "tag": "thank_you",
+    "patterns": ["thank you", "thank you so much", "thanks"],
+    "responses": ["You are welcome!", "No Problem", "Anytime! :-)"]
+  },
+    {
   "tag": "personal",
   "patterns": ["how are you?", "how are you doing?", "how's it going?", "how are things?"],
   "responses": ["I'm an AI, so I don't have feelings, but I'm here to assist you!", "I'm doing well, thank you. How can I help you today?", "As an AI, I don't experience emotions, but I'm ready to assist you with any questions."]
@@ -13,7 +18,7 @@
     {
   "tag": "name",
   "patterns": ["What's your name?", "May I know your name?", "Could you tell me your name?"],
-  "responses": ["I'm an AI assistant, but you can call me Flexi!", "I'm here to assist you, but I don't have a personal name. You can simply refer to me as Flexi.", "I don't possess a personal name as I am an AI, but you can address me as Flexi."]
+  "responses": ["I'm an AI assistant, but you can call me Felix!", "I'm here to assist you, but I don't have a personal name. You can simply refer to me as Felix.", "I don't possess a personal name as I am an AI, but you can address me as Felix."]
 },
     {
     "tag": "gpa",
@@ -57,8 +62,8 @@
   },
     {
     "tag": "it_courses",
-    "patterns": ["IT courses", "list of IT courses", "what are the IT degrees I can follow", "courses in IT department"],
-    "responses": ["Here is the list of IT courses|BIT|BCS|BTEC in Networking|BTEC in Computing & Systems Development"]
+    "patterns": ["IT courses", "list of IT courses", "what are the IT degrees I can follow", "courses in IT department", "computer degrees"],
+    "responses": ["Here is the list of IT courses|1. BIT|2. BCS|3. BTEC in Networking|4. BTEC in Computing & Systems Development"]
   }
   ]
 
